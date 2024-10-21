@@ -10,6 +10,7 @@ public class Mastermind
     {
 
         List<Integer> numbers = new ArrayList<>();
+        List<Integer> randNumbers = new ArrayList<>();
 
         Console cons = System.console();
 
@@ -27,31 +28,11 @@ public class Mastermind
 
             if(!(userInput.equals("quit")))
             { 
-                if (userInput.length() != 4)
-                {
-                    System.out.println("Please guess only 4 digits.");
-                }
-                else
-                {   
-                    String[] strList = userInput.split("");
-
-                    for (String number: strList)
-                    {
-                        int i = Integer.parseInt(number);
-
-                        if (i < 1 || i > 6)
-                        {
-                            System.out.println("Each digit must range between 1-6");
-                            break;
-                        }
-                        else
-                        {
-                            numbers.add(i);
-                        }
-                    }
-
-                    System.out.println(numbers);
-                }
+               numbers = UserGuess.guess(userInput);
+               randNumbers = RandomNumbers.RandFourDigits();
+               
+               System.out.println(numbers);
+               System.out.println(randNumbers);
             }
   
             else
@@ -66,5 +47,12 @@ public class Mastermind
 
     // Methods
     
+    public static void checkGuess(List<Integer> numbers, List<Integer> randNumbers)
+    {
+        for(int i = 0; i<randNumbers.size(); i++)
+        {
+            if(numbers[i].equals)
+        }
+    }
 
 }

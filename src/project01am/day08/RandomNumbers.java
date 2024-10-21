@@ -1,5 +1,7 @@
 package day08;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class RandomNumbers 
@@ -30,15 +32,24 @@ public class RandomNumbers
     
     // 4 Randoms
 
-    public static String RandFourDigits()
+    public static List<Integer> RandFourDigits()
     {
+        List<Integer> intNumList = new ArrayList<>();
+
         int r1 = generateRandom();
         int r2 = generateRandom();
         int r3 = generateRandom();
         int r4 = generateRandom();
 
-        String fd = Integer.toString(r1) + Integer.toString(r2) +Integer.toString(r3) +Integer.toString(r4); 
-        return fd;
+        // String fd = Integer.toString(r1) + Integer.toString(r2) +Integer.toString(r3) +Integer.toString(r4); 
+        
+        intNumList.add(r1);
+        intNumList.add(r2);
+        intNumList.add(r3);
+        intNumList.add(r4);
+        
+
+        return intNumList;
     }
 
 }
