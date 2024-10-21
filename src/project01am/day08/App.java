@@ -91,5 +91,6 @@ public class App
        Arrays.sort(arr, Collections.reverseOrder()); // what is comparator?
        System.out.println("Sorted in descending order: " + Arrays.toString(arr)); // or arr.toString()
 
+       
     }
 }

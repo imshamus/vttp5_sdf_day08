@@ -9,11 +9,13 @@ import java.util.Set;
 public class Permutation 
 {
     Set<String> permutations = new HashSet<>();
+    // Set<String> 
 
     // Methods
     public void getPermutation(List<String> inputList)
-    {
-        // for 
+    {   
+
+        
     }
 
     public static void main(String[] args) 
@@ -25,14 +27,14 @@ public class Permutation
         while(true)
         {   
             inputList.clear();
-
+            
             String userInput = cons.readLine("Enter '4 distinct alphanumeric inputs' or 'quit' to exit: "); // 4 digit permutation is 4! = 4 x 3 x 2 x 1 = 24 unique
 
             if(!(userInput.equals("quit")))
-            {
-                if (!(userInput.length() == 4))
+            { 
+                if (userInput.length() != 4)
                 {
-                    System.out.println("Inputs must only be 4.");
+                    System.out.println("Inputs must be exactly 4.");
                 }
                 else
                 {   
@@ -54,14 +56,14 @@ public class Permutation
                     else
                     {
                         System.out.println(inputList);
-                        System.out.println(inputList.get(0));
+                        // System.out.println(inputList.get(0));
                     }
                 }
             }
             else
             {
                 System.out.println("Thank you! Have a nice day!");
-                
+
                 break;
             }
                 // Permutation p = new Permutation();
