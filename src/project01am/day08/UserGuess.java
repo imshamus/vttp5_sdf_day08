@@ -37,6 +37,7 @@ public class UserGuess
 
             for (String number: strList)
             {
+                int i = Integer.parseInt(number);
 
                 if (i < 1 || i > 6)
                 {
