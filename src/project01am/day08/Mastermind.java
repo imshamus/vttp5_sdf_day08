@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mastermind 
-{  
+{     
     public static void main(String[] args) 
     {
 
         List<Integer> numbers = new ArrayList<>();
-        List<Integer> randNumbers = new ArrayList<>();
+        List<Integer> randNumbers = RandomNumbers.RandFourDigits();
+
 
         Console cons = System.console();
 
@@ -29,10 +30,11 @@ public class Mastermind
             if(!(userInput.equals("quit")))
             { 
                numbers = UserGuess.guess(userInput);
-               randNumbers = RandomNumbers.RandFourDigits();
                
                System.out.println(numbers);
                System.out.println(randNumbers);
+
+               checkGuess(numbers, randNumbers);
             }
   
             else
@@ -48,11 +50,27 @@ public class Mastermind
     // Methods
     
     public static void checkGuess(List<Integer> numbers, List<Integer> randNumbers)
-    {
-        for(int i = 0; i<randNumbers.size(); i++)
+    {   
+        int c_counter = 0;
+        int cp_counter = 0;
+        int j = 0;
+
+        for (int i = 0; i<randNumbers.size(); i++)
         {
-            if(numbers[i].equals)
+            if(numbers.get(i).equals(randNumbers.get(i)))
+            {
+                cp_counter++;
+            }
         }
+
+        if (randNumbers.contains(numbers.get(j))) 
+        {
+            c_counter++;
+            j++;
+        }
+
+        System.out.println("C: " + c_counter);
+        System.out.println("CP: " + cp_counter);
     }
 
 }
