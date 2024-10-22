@@ -1,4 +1,4 @@
-package day08;
+package day08.Permutations;
 
 import java.io.Console;
 import java.util.ArrayList;
@@ -9,14 +9,7 @@ import java.util.Set;
 public class Permutation 
 {
     Set<String> permutations = new HashSet<>();
-    // Set<String> 
-
-    // Methods
-    public void getPermutation(List<String> inputList)
-    {   
-
-        
-    }
+    Set<String> tempList = new HashSet<>();
 
     public static void main(String[] args) 
     {
@@ -36,6 +29,7 @@ public class Permutation
                 {
                     System.out.println("Inputs must be exactly 4.");
                 }
+
                 else
                 {   
                     String[] inputs = userInput.split("");
@@ -65,15 +59,21 @@ public class Permutation
                 System.out.println("Thank you! Have a nice day!");
 
                 break;
-            }
-                // Permutation p = new Permutation();
-                // p.getPermutation(userInput);
-            
+            }            
         }
         
-
-        // use generate permuation method
-        // store into set
-        // print set
     }
+
+     // Methods
+     public void getPermutation(List<String> inputList)
+     {
+        List<String> tempList = new ArrayList<>();
+
+        for(int i = 0; i < inputList.size(); i++)
+        {
+            tempList.add(inputList.get(i));
+        }
+
+        
+     }
 }
