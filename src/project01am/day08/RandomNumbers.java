@@ -47,8 +47,7 @@ public class RandomNumbers
         intNumList.add(r2);
         intNumList.add(r3);
         intNumList.add(r4);
-        
-
+      
         return intNumList;
     }
 

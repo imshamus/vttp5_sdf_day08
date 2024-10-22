@@ -28,7 +28,7 @@ public class UserGuess
         {
             System.out.println("Please guess only 4 digits.");
 
-            return null;
+            return numbers;
         }
 
         else
@@ -37,7 +37,6 @@ public class UserGuess
 
             for (String number: strList)
             {
-                int i = Integer.parseInt(number);
 
                 if (i < 1 || i > 6)
                 {
