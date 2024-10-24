@@ -28,40 +28,37 @@ public class ClientReader implements Runnable
 
             while (true)
             {
-                if (socket != null)
+                try
                 {
-                    try
-                    {
-                        serverMsg = br.readLine();
+                    serverMsg = br.readLine();
 
-                        if (serverMsg == null)
-                        {
-                            System.out.println();
-                            System.out.println("Server is closed.");
-                            break;
-                        }
-                                    
-                        if (serverMsg.equals("end"))
-                        {
-                            System.out.println("Server terminating connection..");
-                            break;
-                        } 
-
-                        System.out.println("Message from server: " + serverMsg);
-                        System.out.print(">>> "); // print prompt again
-                    }
-                    
-                    catch (SocketException e)
+                    if (serverMsg == null)
                     {
-                        System.out.println("Server socket closed.");
-                        break;
+                        // if server sends null, connection is closed
+                        System.out.println("Server is closed.");
+                        break; // Exit loop and close the client
                     }
-                    
+                       
+                    // Handle "end" command from server
+                    if (serverMsg.equals("end"))
+                    {
+                        System.out.println("Server terminating connection..");
+                        break; // Exit loop and close the client
+                    } 
+
+                    System.out.println("Message from server: " + serverMsg);
+                    System.out.print(">>> "); // print prompt again
                 }
                 
-
+                catch (SocketException e)
+                {
+                    System.out.println("Server socket closed.");
+                    break; // Exit loop if socket is closed from the server side
+                }
             }
-                  
+
+            socket.close(); // Close client socket
+
         } 
 
         catch (IOException e) 

@@ -17,7 +17,7 @@ public class Server
             Socket clientSocket = server.accept();
             System.out.println("Client connected:" + clientSocket.getInetAddress());
 
-            ServerReader sr = new ServerReader(clientSocket);
+            ServerReader sr = new ServerReader(clientSocket, server);
             Thread threadSr = new Thread(sr);
 
             ServerWriter sw = new ServerWriter(clientSocket);

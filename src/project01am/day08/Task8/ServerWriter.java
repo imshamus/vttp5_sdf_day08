@@ -33,7 +33,7 @@ public class ServerWriter implements Runnable
 
                 if (serverMsg.equals("end"))
                 {
-                    bw.write("Server ending connection.. \n");
+                    bw.write("Server terminating connection.. \n");
                     bw.flush();
                     break;
                 }
