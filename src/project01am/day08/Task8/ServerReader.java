@@ -36,18 +36,17 @@ public class ServerReader implements Runnable
                     break;
                 }
                 
-                System.out.println("Message from client: " + clientMsg);
-
                 if (clientMsg.equals("end"))
                 {
                     System.out.println("Client terminating connection..");
                     break;
                 }
-
-                System.out.print(">>> "); // print prompt again
-            
                 
+                System.out.println("Message from client: " + clientMsg);
+                System.out.print(">>> "); // print prompt again
             }
+
+            socket.close();
         }
         catch (IOException e)
         {

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class ClientReader implements Runnable 
 {
@@ -27,28 +28,40 @@ public class ClientReader implements Runnable
 
             while (true)
             {
-
-                serverMsg = br.readLine();
-
-                if (serverMsg == null)
+                if (socket != null)
                 {
-                    System.out.println();
-                    System.out.println("Server is closed.");
-                    break;
+                    try
+                    {
+                        serverMsg = br.readLine();
+
+                        if (serverMsg == null)
+                        {
+                            System.out.println();
+                            System.out.println("Server is closed.");
+                            break;
+                        }
+                                    
+                        if (serverMsg.equals("end"))
+                        {
+                            System.out.println("Server terminating connection..");
+                            break;
+                        } 
+
+                        System.out.println("Message from server: " + serverMsg);
+                        System.out.print(">>> "); // print prompt again
+                    }
+                    
+                    catch (SocketException e)
+                    {
+                        System.out.println("Server socket closed.");
+                        break;
+                    }
+                    
                 }
                 
-                
-                System.out.println("Message from server: " + serverMsg);
 
-                if (serverMsg.equals("end"))
-                {
-                    System.out.println("Server terminating connection..");
-                    break;
-                } 
-
-                System.out.print(">>> "); // print prompt again
-             
-            }      
+            }
+                  
         } 
 
         catch (IOException e) 
