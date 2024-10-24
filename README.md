@@ -24,6 +24,6 @@ General idea: Com random generate 4 digits, 1-6 ea, 1111 - 6666
 6. Display whether you win or lose.
 7. Repeat the game.
 
-javac -d classes --source-path . src/project01am/day08/ArithApp/*.java
-java -cp classes day08.ArithApp.Server
-
+javac -d classes --source-path . src/project01am/day08/Task8/*.java
+java -cp classes day08.Task8.Server
+java -cp classes day08.Task8.Client

@@ -1,4 +1,4 @@
-package day08.Permutations;
+package day08.Task6;
 
 import java.io.Console;
 import java.util.ArrayList;

@@ -1,20 +1,20 @@
-package day08.ArithApp;
+package day08.Task8;
 
 public class Parameters 
 {
-    private int var1;
-    private int var2;
+    /* private int var1;
+    private int var2; */
 
     // Constructors
     public Parameters() {
     }
 
-    public Parameters(int var1, int var2) {
+    /* public Parameters(int var1, int var2) {
         this.var1 = var1;
         this.var2 = var2;
-    }
+    } */
 
-    // Getters Setters
+    /* // Getters Setters
     public int getVar1() {
         return var1;
     }
@@ -30,7 +30,7 @@ public class Parameters
     public void setVar2(int var2) {
         this.var2 = var2;
     }
-
+ */
     // Methods
     public int addOps(int var1, int var2)
     {

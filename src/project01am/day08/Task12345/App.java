@@ -1,4 +1,4 @@
-package day08;
+package day08.Task12345;
 
 import java.io.BufferedWriter;
 import java.io.File;

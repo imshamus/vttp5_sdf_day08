@@ -1,4 +1,4 @@
-package day08.Mastermind;
+package day08.Task7;
 
 import java.util.ArrayList;
 import java.util.List;
