@@ -1,4 +1,4 @@
-package day08.Task8;
+package day08.Task8Duplex;
 
 public class Parameters 
 {
@@ -32,25 +32,25 @@ public class Parameters
     }
  */
     // Methods
-    public int addOps(int var1, int var2)
+    public static int addOps(int var1, int var2)
     {
         int results = var1 + var2;
         return results;
     }
     
-    public int divideOps(int var1, int var2)
+    public static int divideOps(int var1, int var2)
     {
         int results = var1 / var2;
         return results;
     }
 
-    public int multiOps(int var1, int var2)
+    public static int multiOps(int var1, int var2)
     {
         int results = var1 * var2;
         return results;
     }
 
-    public int subtractOps(int var1, int var2)
+    public static int subtractOps(int var1, int var2)
     {
         int results = var1 - var2;
         return results;

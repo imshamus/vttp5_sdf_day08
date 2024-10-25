@@ -32,8 +32,8 @@ public class Mastermind
                 { 
                     numbers = UserGuess.guess(userInput);
                 
-                    // System.out.println(numbers);
-                    // System.out.println(randNumbers);
+                    System.out.println(numbers);
+                    System.out.println(randNumbers);
             
                     try
                     {

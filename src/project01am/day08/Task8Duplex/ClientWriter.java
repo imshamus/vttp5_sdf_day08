@@ -1,4 +1,4 @@
-package day08.Task8;
+package day08.Task8Duplex;
 
 import java.io.BufferedWriter;
 import java.io.Console;
@@ -31,19 +31,25 @@ public class ClientWriter implements Runnable
             {
                 String clientMsg = cons.readLine(">>> ");
 
+                if (socket.isClosed())
+                {
+                    break;
+                }
+
                 if (clientMsg.equals("end"))
                 {
-                    bw.write("Client ending connection.. \n");
+                    bw.write(clientMsg + "\n"); // client send "end" command over to client
                     bw.flush();
                     break;
                 }
 
+                
                 bw.write(clientMsg + "\n");
                 bw.flush();
             }
 
             bw.close(); // cascaded close the other wrapped objects like writer & os
-            socket.close();
+            socket.close(); // close socket if client input "end"
 
         }
 

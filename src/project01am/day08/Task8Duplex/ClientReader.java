@@ -1,4 +1,4 @@
-package day08.Task8;
+package day08.Task8Duplex;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -31,33 +31,26 @@ public class ClientReader implements Runnable
                 try
                 {
                     serverMsg = br.readLine();
-
-                    if (serverMsg == null)
-                    {
-                        // if server sends null, connection is closed
-                        System.out.println("Server is closed.");
-                        break; // Exit loop and close the client
-                    }
                        
                     // Handle "end" command from server
                     if (serverMsg.equals("end"))
                     {
-                        System.out.println("Server terminating connection..");
-                        break; // Exit loop and close the client
+                        System.out.println("Server terminated connection..");
+                        System.out.print("Hit 'Enter' to exit program.");
+                        break; // Exit loop and close the client socket
                     } 
 
                     System.out.println("Message from server: " + serverMsg);
                     System.out.print(">>> "); // print prompt again
                 }
-                
                 catch (SocketException e)
                 {
-                    System.out.println("Server socket closed.");
+                    System.out.println("Connection to server ended."); // Unable to read since server
                     break; // Exit loop if socket is closed from the server side
                 }
             }
 
-            socket.close(); // Close client socket
+            socket.close(); // Close socket after server sends "end"
 
         } 
 
